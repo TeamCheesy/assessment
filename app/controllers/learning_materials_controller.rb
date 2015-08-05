@@ -18,4 +18,9 @@ class LearningMaterialsController < ApplicationController
 
   def show
   end
+
+  private
+    def learning_material_params
+      params.require(:learning_material).permit(:topic, :source, :description)
+    end
 end
