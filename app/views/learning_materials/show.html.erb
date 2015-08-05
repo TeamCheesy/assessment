@@ -1,2 +1,13 @@
-<h1>LearningMaterials#show</h1>
-<p>Find me in app/views/learning_materials/show.html.erb</p>
+<h1>Created learning material:</h1>
+<article>
+  <h3>Topic:</h3>
+  <p><%= @learning_material.topic %></p>
+
+  <h3>Source:</h3>
+  <p><%= @learning_material.source %></p>
+
+  <h3>Description:</h3>
+  <p><%= @learning_material.description %></p>
+</article>
+
+<%= link_to 'Back', learning_materials_path %>

@@ -1,5 +1,6 @@
 class LearningMaterialsController < ApplicationController
   def index
+    @learning_materials = LearningMaterial.all.order("created_at DESC")
   end
 
   def new
@@ -17,6 +18,7 @@ class LearningMaterialsController < ApplicationController
   end
 
   def show
+    @learning_material = LearningMaterial.find(params[:id])
   end
 
   private
