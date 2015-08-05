@@ -1,0 +1,21 @@
+class LearningMaterialsController < ApplicationController
+  def index
+  end
+
+  def new
+    @learning_material = LearningMaterial.new
+  end
+
+  def create
+    @learning_material = LearningMaterial.new(learning_material_params)
+
+    if @learning_material.save
+      redirect_to @learning_material
+    else
+      render 'new'
+    end
+  end
+
+  def show
+  end
+end

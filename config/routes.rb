@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+
+  get 'learning_materials/index'
+
+  get 'learning_materials/new'
+
+  get 'learning_materials/show'
+
+  get 'pages/home'
+
+  get 'pages/about'
+
+  resources :learning_materials
+
+  root 'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
