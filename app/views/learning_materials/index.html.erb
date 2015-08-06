@@ -1,0 +1,23 @@
+<h1>Learning Materials</h1>
+
+<p><%= link_to 'Add learning material', new_learning_material_path %></p>
+
+<table>
+  <tr>
+    <th>Topic:</th>
+    <th>Source:</th>
+    <th>Description:</th>
+    <th>Details:</th>
+  </tr>
+
+  <% @learning_materials.each do |learning_material| %>
+    <tr>
+      <td><%= learning_material.topic %></td>
+      <td><%= learning_material.source %></td>
+      <td><%= learning_material.description %></td>
+      <td><%= link_to 'Show', learning_material_path(learning_material) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to 'Back to home', pages_home_path %></p>
