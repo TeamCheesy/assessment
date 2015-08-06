@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'learning_materials/index'
-
-  get 'learning_materials/new'
-
-  get 'learning_materials/show'
-
   get 'pages/home'
 
   get 'pages/about'
