@@ -23,6 +23,6 @@ class LearningMaterialsController < ApplicationController
 
   private
     def learning_material_params
-      params.require(:learning_material).permit(:topic, :source, :description, :type)
+      params.require(:learning_material).permit(:topic, :source, :description, :level)
     end
 end
