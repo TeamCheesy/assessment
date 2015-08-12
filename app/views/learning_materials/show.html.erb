@@ -8,6 +8,12 @@
 
   <h3>Description:</h3>
   <p><%= @learning_material.description %></p>
+
+  <h3>Level:</h3>
+  <p><%= @learning_material.level %></p>
+
+  <h3>Added at:</h3>
+  <p><%= @learning_material.created_at.strftime("%d %b. %Y") %></p>
 </article>
 
 <%= link_to 'Back', learning_materials_path, {class: 'btn btn-default'} %>
