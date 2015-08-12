@@ -5,6 +5,8 @@
     <th>Topic:</th>
     <th>Source:</th>
     <th>Description:</th>
+    <th>Level:</th>
+    <th>Added at:</th>
     <th>Details:</th>
   </tr>
 
@@ -13,6 +15,8 @@
       <td><%= learning_material.topic %></td>
       <td><%= learning_material.source %></td>
       <td><%= learning_material.description %></td>
+      <td><%= learning_material.level %></td>
+      <td><%= learning_material.created_at.strftime("%d %b. %Y") %></td>
       <td><%= link_to 'Show', learning_material_path(learning_material) %></td>
     </tr>
   <% end %>
