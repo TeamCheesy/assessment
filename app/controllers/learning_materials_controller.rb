@@ -11,7 +11,7 @@ class LearningMaterialsController < ApplicationController
     @learning_material = LearningMaterial.new(learning_material_params)
 
     if @learning_material.save
-      render 'show'
+      redirect_to @learning_material
     else
       render 'new'
     end
