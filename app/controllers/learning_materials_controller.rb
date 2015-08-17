@@ -13,7 +13,7 @@ class LearningMaterialsController < ApplicationController
     if @learning_material.save
       redirect_to @learning_material
     else
-      render 'new'
+      render :new
     end
   end
 
