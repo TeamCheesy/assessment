@@ -1,6 +1,6 @@
 class LearningMaterialsController < ApplicationController
   def index
-    @learning_materials = LearningMaterial.all.order("created_at DESC")
+    @learning_materials = LearningMaterial.all
   end
 
   def new
