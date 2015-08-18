@@ -38,10 +38,16 @@ level_list = [
               "Advanced",
               ]
 
-topic_list.length.times do |index|
-  topic  = topic_list[index]
-  source = source_list[index]
-  level  = level_list.sample
+# topic_list.length.times do |index|
+#   topic  = topic_list[index]
+#   source = source_list[index]
+#   level  = level_list.sample
 
-  LearningMaterial.create(topic: topic, source: source, description: FFaker::BaconIpsum.sentence, level: level)
+#   LearningMaterial.create(topic: topic, source: source, description: FFaker::BaconIpsum.sentence, level: level)
+# end
+
+
+# Practicing with looping through arrays with each.do
+topic_list.zip(source_list).each do |topic, source|
+  LearningMaterial.create(topic: topic, source: source, description: FFaker::BaconIpsum.sentence, level: level_list.sample)
 end

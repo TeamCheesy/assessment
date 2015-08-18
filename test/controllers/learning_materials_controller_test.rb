@@ -12,7 +12,8 @@ class LearningMaterialsControllerTest < ActionController::TestCase
   end
 
   test "should get show" do
-    get :show
+    lm = LearningMaterial.create(topic: "test topic", source: "test source")
+    get :show, id: lm.id
     assert_response :success
   end
 

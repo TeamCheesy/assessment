@@ -1,4 +1,13 @@
 <%= form_for @learning_material do |f| %>
+  <% if @learning_material.errors.any? %>
+    <h2>Unable to create new learning material:</h2>
+      <ul>
+      <% @learning_material.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+    <p></p>
+  <% end %>
   <p>
     <%= f.label :topic %>
     <%= f.text_field :topic %>

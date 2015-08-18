@@ -1,6 +1,6 @@
 class LearningMaterialsController < ApplicationController
   def index
-    @learning_materials = LearningMaterial.all.order("created_at DESC")
+    @learning_materials = LearningMaterial.all
   end
 
   def new
@@ -13,7 +13,7 @@ class LearningMaterialsController < ApplicationController
     if @learning_material.save
       redirect_to @learning_material
     else
-      render 'new'
+      render :new
     end
   end
 

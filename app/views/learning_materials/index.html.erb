@@ -16,7 +16,7 @@
       <td><%= learning_material.source %></td>
       <td><%= learning_material.description %></td>
       <td><%= learning_material.level %></td>
-      <td><%= learning_material.created_at.strftime("%d %b. %Y") %></td>
+      <td><%= date_format(learning_material.created_at) %></td>
       <td><%= link_to 'Show', learning_material_path(learning_material) %></td>
     </tr>
   <% end %>
