@@ -33,8 +33,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+
+  gem 'rspec-rails', '~> 3.0'
+
+  gem 'factory_girl_rails'
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  gem 'byebug', require: !ENV['RM_INFO'] #require parameter is workaround for RubyMine with Rails 4
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
@@ -43,5 +48,11 @@ group :development, :test do
   gem 'spring'
 
   gem 'ffaker'
+end
+
+group :test do
+
+  gem 'database_cleaner'
+
 end
 
