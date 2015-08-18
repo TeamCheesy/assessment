@@ -1,5 +1,5 @@
 class LearningMaterial < ActiveRecord::Base
-  validates :topic, :source,
+  validates :topic,
             presence: true
 
   default_scope { order('created_at DESC') }

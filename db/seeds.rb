@@ -16,7 +16,7 @@
 #                                               { topic: "Katja Schuurspons", source: "goedeeierenslechteeieren.nl", description: FFaker::BaconIpsum.sentence, level: "Advanced" }
 #                                                ])
 
-# Practicing seeding with arrays
+# Practicing seeding with arrays #1
 topic_list = [
               "Bintje Spiers",
               "Brigitte Barduck",
@@ -47,7 +47,23 @@ level_list = [
 # end
 
 
-# Practicing with looping through arrays with each.do
-topic_list.zip(source_list).each do |topic, source|
-  LearningMaterial.create(topic: topic, source: source, description: FFaker::BaconIpsum.sentence, level: level_list.sample)
+# Practicing seeding with arrays #2
+# topic_list.zip(source_list).each do |topic, source|
+#   LearningMaterial.create(topic: topic, source: source, description: FFaker::BaconIpsum.sentence, level: level_list.sample)
+# end
+
+# Practicing seeding with arrays #3
+
+topics = topic_list.each do |topic|
+  LearningMaterial.create(topic: topic)
+end
+
+learning_materials = LearningMaterial.unscoped.all
+
+learning_materials.each_with_index do |lm, i|
+  lm.update(source: source_list[i])
+end
+
+learning_materials.each do |lm|
+  lm.update(description: FFaker::BaconIpsum.sentence, level: level_list.sample)
 end
