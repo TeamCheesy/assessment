@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150806142521) do
+ActiveRecord::Schema.define(version: 20150819104347) do
 
   create_table "learning_materials", force: :cascade do |t|
     t.string   "topic"
@@ -20,6 +20,18 @@ ActiveRecord::Schema.define(version: 20150806142521) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "level"
+    t.integer  "lesson_id"
+  end
+
+  add_index "learning_materials", ["lesson_id"], name: "index_learning_materials_on_lesson_id"
+
+  create_table "lessons", force: :cascade do |t|
+    t.string   "title"
+    t.string   "chapter"
+    t.string   "category"
+    t.text     "goal"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
