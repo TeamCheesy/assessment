@@ -1,15 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'lessons/index'
-
-  get 'lessons/show'
-
-  get 'lessons/new'
-
-  get 'lessons/edit'
-
-  root 'pages#home'
-
   get 'pages/home'
 
   get 'pages/about'
