@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :lesson do
-    title "MyString"
-    chapter "MyString"
-    category "MyString"
-    goal "MyText"
+    title "Intro"
+    chapter "1 Intro"
+    category "Rails"
+    goal "First intro, your first webapp"
   end
 end
