@@ -17,12 +17,22 @@ class LessonsController < ApplicationController
 
   def create
     @lesson = Lesson.new(lesson_params)
-    redirect_to @lesson
+    
+    if @lesson.save
+      redirect_to @lesson
+    else
+      render :new
+    end
   end
 
   def update
     @lesson = Lesson.find(params[:id])
-    redirect_to @lesson
+
+    if @lesson.update(lesson_params)
+      redirect_to @lesson
+    else
+      render :edit
+    end
   end
 
   private
