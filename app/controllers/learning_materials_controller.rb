@@ -20,7 +20,7 @@ class LearningMaterialsController < ApplicationController
   end
 
   def show
-    @learning_material = LearningMaterial.find(params[:id])
+    @learning_material = @lesson.learning_materials.find(params[:id])
   end
 
   private
