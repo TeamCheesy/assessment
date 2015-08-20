@@ -1,4 +1,4 @@
-<%= form_for @learning_material do |f| %>
+<%= form_for ([@lesson, @learning_material]) do |f| %>
   <% if @learning_material.errors.any? %>
     <h2>Unable to create new learning material:</h2>
       <ul>

@@ -10,10 +10,10 @@ class LearningMaterialsController < ApplicationController
   end
 
   def create
-    @learning_material = LearningMaterial.new(learning_material_params)
+    @learning_material = @lesson.learning_materials.build(learning_material_params)
 
     if @learning_material.save
-      redirect_to @learning_material
+      redirect_to [@lesson, @learning_material]
     else
       render :new
     end

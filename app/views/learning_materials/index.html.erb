@@ -17,10 +17,10 @@
       <td><%= learning_material.description %></td>
       <td><%= learning_material.level %></td>
       <td><%= date_format(learning_material.created_at) %></td>
-      <td><%= link_to 'Show', lesson_learning_material_path(lesson, learning_material) %></td>
+      <td><%= link_to 'Show', lesson_learning_material_path(@lesson, learning_material) %></td>
     </tr>
   <% end %>
 </table>
 
-<p><%= link_to 'Add learning material', new_lesson_learning_material_path(lesson), {class: 'btn btn-default'} %></p>
+<p><%= link_to 'Add learning material', new_lesson_learning_material_path(@lesson), {class: 'btn btn-default'} %></p>
 
