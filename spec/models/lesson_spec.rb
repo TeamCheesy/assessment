@@ -18,6 +18,10 @@ describe Lesson, type: :model do
       lesson = build(:lesson, chapter: nil, category: nil, goal: nil)
       expect(lesson).to be_valid
     end
+
+    it { should have_many(:learning_materials) }
+    it { should have_many(:learning_materials).dependent(:destroy) }
+    
   end
 
 
