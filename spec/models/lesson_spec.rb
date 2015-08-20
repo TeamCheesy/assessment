@@ -21,7 +21,7 @@ describe Lesson, type: :model do
 
     it { should have_many(:learning_materials) }
     it { should have_many(:learning_materials).dependent(:destroy) }
-    
+
   end
 
 
