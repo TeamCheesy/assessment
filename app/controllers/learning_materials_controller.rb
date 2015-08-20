@@ -2,7 +2,7 @@ class LearningMaterialsController < ApplicationController
   before_filter :get_lesson
 
   def index
-    @learning_materials = LearningMaterial.all
+    @learning_materials = @lesson.learning_materials
   end
 
   def new
