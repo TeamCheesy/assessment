@@ -23,14 +23,9 @@ describe LearningMaterial, type: :model do
       context 'with scope' do
         #not for daily behaviour, but f.e. when changing the dbase etc
         it 'should return the materials in the correct order' do
-          @first = create(:learning_material, created_at: 1.day.ago)
-          @last = create(:learning_material, created_at: 3.day.ago)
-          #this one passes! :
-          #expect(LearningMaterial.ordered).to match_array([@first, @last])
-
-          #what is wrong with this??? tried several things
-          array = [@last, @first]
-          expect(LearningMaterial.ordered[1..2]).to eq(array)
+          @last = create(:learning_material, created_at: 1.day.ago)
+          @first = create(:learning_material, created_at: 3.day.ago)
+          expect(LearningMaterial.ordered.to_a).to eq([@last, @first])
         end
       end
 
