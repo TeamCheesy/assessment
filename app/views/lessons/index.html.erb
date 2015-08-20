@@ -7,6 +7,7 @@
     <th>Category:</th>
     <th>Goal:</th>
     <th>Show:</th>
+    <th>Edit:</th>
   </tr>
 
   <% @lessons.each do |lesson| %>
@@ -16,6 +17,7 @@
       <td><%= lesson.category %></td>
       <td><%= lesson.goal %></td>
       <td><%= link_to 'Show', lesson_path(lesson) %></td>
+      <td><%= link_to 'Edit', edit_lesson_path(lesson) %></td>
     </tr>
   <% end %>
 </table>
