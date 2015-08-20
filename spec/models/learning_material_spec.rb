@@ -21,14 +21,16 @@ describe LearningMaterial, type: :model do
     it { should belong_to(:lesson) }
 
       context 'with scope' do
-        before(:all) do
-          @first = create(:learning_material, created_at: 1.day.ago)
-          @last = create(:learning_material, created_at: 3.day.ago)
-        end
-
         #not for daily behaviour, but f.e. when changing the dbase etc
         it 'should return the materials in the correct order' do
-          expect(LearningMaterial.ordered).to match_array([@last, @first])
+          @first = create(:learning_material, created_at: 1.day.ago)
+          @last = create(:learning_material, created_at: 3.day.ago)
+          #this one passes! :
+          #expect(LearningMaterial.ordered).to match_array([@first, @last])
+
+          #what is wrong with this??? tried several things
+          array = [@last, @first]
+          expect(LearningMaterial.ordered[1..2]).to eq(array)
         end
       end
 
