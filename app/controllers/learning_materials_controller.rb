@@ -1,4 +1,6 @@
 class LearningMaterialsController < ApplicationController
+  before_filter :get_lesson
+
   def index
     @learning_materials = LearningMaterial.all
   end
@@ -24,5 +26,9 @@ class LearningMaterialsController < ApplicationController
   private
     def learning_material_params
       params.require(:learning_material).permit(:topic, :source, :description, :level)
+    end
+
+    def get_lesson
+      @lesson = Lesson.find(params[:lesson_id])
     end
 end
