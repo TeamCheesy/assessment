@@ -1,2 +1,26 @@
-<h1>Lessons#index</h1>
-<p>Find me in app/views/lessons/index.html.erb</p>
+<h1>Lessons</h1>
+
+<table class="table">
+  <tr>
+    <th>Title:</th>
+    <th>Chapter:</th>
+    <th>Category:</th>
+    <th>Goal:</th>
+    <th>Show:</th>
+    <th>Edit:</th>
+  </tr>
+
+  <% @lessons.each do |lesson| %>
+    <tr>
+      <td><%= lesson.title %></td>
+      <td><%= lesson.chapter %></td>
+      <td><%= lesson.category %></td>
+      <td><%= lesson.goal %></td>
+      <td><%= link_to 'Show', lesson_path(lesson) %></td>
+      <td><%= link_to 'Edit', edit_lesson_path(lesson) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to 'Add lesson', new_lesson_path, {class: 'btn btn-default'} %></p>
+

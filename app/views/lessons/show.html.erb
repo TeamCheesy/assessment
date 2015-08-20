@@ -1,2 +1,16 @@
-<h1>Lessons#show</h1>
-<p>Find me in app/views/lessons/show.html.erb</p>
+<h1>Created lesson:</h1>
+<article>
+  <h3>Title:</h3>
+  <p><%= @lesson.title %></p>
+
+  <h3>Chapter:</h3>
+  <p><%= @lesson.chapter %></p>
+
+  <h3>Category:</h3>
+  <p><%= @lesson.category %></p>
+
+  <h3>Goal:</h3>
+  <p><%= @lesson.goal %></p>
+</article>
+
+<%= link_to 'Back', lessons_path, {class: 'btn btn-default'} %>

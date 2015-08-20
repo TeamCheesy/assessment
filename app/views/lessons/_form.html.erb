@@ -1,0 +1,21 @@
+<%= form_for @lesson do |f| %>
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :chapter %>
+    <%= f.text_field :chapter %>
+  </p>
+  <p>
+    <%= f.label :category %>
+    <%= f.text_area :category %>
+  </p>
+  <p>
+    <%= f.label :goal %>
+    <%= f.text_area :goal %>
+  </p>
+  <p>
+    <%= f.submit :class => 'btn btn-default' %>
+  </p>
+<% end %>
