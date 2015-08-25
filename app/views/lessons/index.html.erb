@@ -6,8 +6,8 @@
     <th>Chapter:</th>
     <th>Category:</th>
     <th>Goal:</th>
-    <th>Edit:</th>
     <th>Learning materials:</th>
+    <th>Edit:</th>
   </tr>
 
   <% @lessons.each do |lesson| %>
@@ -16,9 +16,13 @@
       <td><%= lesson.chapter %></td>
       <td><%= lesson.category %></td>
       <td><%= lesson.goal %></td>
+      <td><% lesson.learning_materials.each do |lm| %>
+            <table>
+              <tr><%= link_to lm.topic, lesson_learning_material_path(lesson, lm) %></tr>
+            </table>
+          <% end %>
+      </td>
       <td><%= link_to 'Edit', edit_lesson_path(lesson) %></td>
-      <td><%= link_to 'Learning Materials', lesson_learning_materials_path(lesson) %></td>
-    </tr>
   <% end %>
 </table>
 
