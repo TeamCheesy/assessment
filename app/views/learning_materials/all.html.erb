@@ -1,0 +1,25 @@
+<h1>Learning Materials</h1>
+
+<table class="table">
+  <tr>
+    <th>Topic:</th>
+    <th>Source:</th>
+    <th>Description:</th>
+    <th>Level:</th>
+    <th>Added at:</th>
+    <th>Details:</th>
+  </tr>
+
+  <% @learning_materials.each do |learning_material| %>
+    <tr>
+      <td><%= learning_material.topic %></td>
+      <td><%= learning_material.source %></td>
+      <td><%= learning_material.description %></td>
+      <td><%= learning_material.level %></td>
+      <td><%= date_format(learning_material.created_at) %></td>
+      <td><%= link_to 'Show', lesson_learning_material_path(@lesson, learning_material) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to 'Add learning material', new_lesson_learning_material_path(@lesson), {class: 'btn btn-default'} %></p>
