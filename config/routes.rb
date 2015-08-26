@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'pages/about'
 
+  get 'all_materials', to: 'learning_materials#all'
+
   resources :lessons do
     resources :learning_materials
   end

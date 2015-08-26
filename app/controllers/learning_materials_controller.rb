@@ -1,5 +1,9 @@
 class LearningMaterialsController < ApplicationController
-  before_filter :get_lesson
+  before_filter :get_lesson, except: :all
+
+  def all
+     @learning_materials = LearningMaterial.all
+  end
 
   def index
     @learning_materials = @lesson.learning_materials
