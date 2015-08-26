@@ -1,4 +1,4 @@
-<h1>Created learning material:</h1>
+<h1>Created learning material on lesson "<%= @lesson.title %>":</h1>
 <article>
   <h3>Topic:</h3>
   <p><%= @learning_material.topic %></p>
@@ -16,4 +16,4 @@
   <p><%= date_format(@learning_material.created_at) %></p>
 </article>
 
-<%= link_to 'Back', learning_materials_path, {class: 'btn btn-default'} %>
+<%= link_to 'Back', lessons_path, {class: 'btn btn-default'} %>
