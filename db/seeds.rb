@@ -17,26 +17,26 @@
 #                                                ])
 
 # Practicing seeding with arrays
-topic_list = [
-              "Bintje Spiers",
-              "Brigitte Barduck",
-              "Frank Zumatra",
-              "Bill Gaatjes",
-              "Katja Schuurspons",
-              ]
+# topic_list = [
+#               "Bintje Spiers",
+#               "Brigitte Barduck",
+#               "Frank Zumatra",
+#               "Bill Gaatjes",
+#               "Katja Schuurspons",
+#               ]
 
-source_list = [
-              "hitmebabyonemoretime.com",
-              "imonaboat.com",
-              "comeflywithme.com",
-              "moneymoneymoney.com",
-              "goedeeierenslechteeieren.nl",
-              ]
+# source_list = [
+#               "hitmebabyonemoretime.com",
+#               "imonaboat.com",
+#               "comeflywithme.com",
+#               "moneymoneymoney.com",
+#               "goedeeierenslechteeieren.nl",
+#               ]
 
-level_list = [
-              "Basic",
-              "Advanced",
-              ]
+# level_list = [
+#               "Basic",
+#               "Advanced",
+#               ]
 
 # topic_list.length.times do |index|
 #   topic  = topic_list[index]
@@ -48,6 +48,66 @@ level_list = [
 
 
 # Practicing with looping through arrays with each.do
-topic_list.zip(source_list).each do |topic, source|
-  LearningMaterial.create(topic: topic, source: source, description: FFaker::BaconIpsum.sentence, level: level_list.sample)
+# topic_list.zip(source_list).each do |topic, source|
+#   LearningMaterial.create(topic: topic, source: source, description: FFaker::BaconIpsum.sentence, level: level_list.sample)
+# end
+
+lessons     = [
+               "MVC",
+               "Methods",
+               "CRUD",
+               "Routes",
+               "Testing",
+              ]
+
+chapters    = [
+               "Chapter 1",
+               "Chapter 2",
+               "Chapter 3",
+               "Chapter 4",
+               "Chapter 5",
+              ]
+
+categories  = [
+               "Tutorial",
+               "Reading",
+               "Exercise",
+              ]
+
+goals       = [
+               "Understanding",
+               "Practicing",
+              ]
+
+sources     = [
+              "www.source.com",
+              "www.anothersource.com",
+              "www.sourcalicious.io",
+              ]
+
+levels       = [
+               "Basic",
+               "Advanced",
+              ]
+
+lesson_ids  = [
+               1, 2, 3, 4, 5,
+              ]
+
+
+lessons.each do |lesson|
+  Lesson.create(title: lesson, chapter: chapters.sample, category: categories.sample, goal: goals.sample)
+  5.times do
+    LearningMaterial.create(topic: lessons.sample, source: sources.sample, description: FFaker::BaconIpsum.sentence, level: levels.sample, lesson_id: Lesson.last.id)
+  end
 end
+
+
+# Andre's alternative version:
+
+# 5.times do
+#   lesson = Lesson.create(title: lessons.sample, chapter: chapters.sample, category: categories.sample, goal: goals.sample)
+#   5.times do
+#     learning_material = LearningMaterial.create(lesson_id: lesson.id, topic: lessons.sample, source: sources.sample, description: FFaker::BaconIpsum.sentence, level: levels.sample)
+#   end
+# end
